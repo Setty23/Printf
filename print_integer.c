@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _print_decimal - Prints a decimal number
+ * _print_decimal - Prints a decimal number %d and %i
  * @args: The list of arguments
  * Return: Number of characters printed
  */
@@ -9,7 +9,7 @@ int _print_decimal(va_list args)
 {
 	int num;
 	int count = 0;
-	int divisor = 1;
+	int div = 1;
 
 
 	num = va_arg(args, int);
@@ -25,14 +25,14 @@ int _print_decimal(va_list args)
 		count += _putchar('-');
 	}
 
-	while (num / divisor > 9)
+	while (num / div > 9)
 		divisor *= 10;
 
-	while (divisor != 0)
+	while (div != 0)
 	{
-		count += _putchar('0' + (num / divisor));
-		num %= divisor;
-		divisor /= 10;
+		count += _putchar('0' + (num / div));
+		num %= div;
+		div /= 10;
 	}
 
 	return (count);
