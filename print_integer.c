@@ -26,7 +26,7 @@ int _print_decimal(va_list args)
 	}
 
 	while (num / div > 9)
-		divisor *= 10;
+		div *= 10;
 
 	while (div != 0)
 	{
